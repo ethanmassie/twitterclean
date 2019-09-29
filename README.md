@@ -4,6 +4,9 @@ Simple python script for blocking followers, unfollowing, and deleting all statu
 Requires:
 - python
 - tweepy
+- twitter api credentials
+
+Add your credentials to the credentials.ini file.
 
 ```
 usage: twitterclean.py [-h] [--no-block] [--no-unfollow] [--no-delete-tweets]
