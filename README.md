@@ -2,8 +2,8 @@
 Simplet python script for blocking followers, unfollowing, and deleting all statuses for a twitter account. 
 
 Requires:
-python
-tweepy
+- python
+- tweepy
 
 ```
 usage: twitterclean.py [-h] [--no-block] [--no-unfollow] [--no-delete-tweets]
