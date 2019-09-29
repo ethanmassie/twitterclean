@@ -18,21 +18,21 @@ def main(args, conf):
 	while True:
 		try:
 			finished = 0
-			if not args['no_unfollow'] or len(api.friends()) > 0:
+			if not args['no_unfollow'] and len(api.friends()) > 0:
 				quiet_print('unfollowing...', args['quiet'])
 				for friend in api.friends():
 					api.destroy_friendship(friend.id, friend.screen_name)
 			else:
 				finished += 1
 			
-			if not args['no_block'] or len(api.followers()) > 0:
+			if not args['no_block'] and len(api.followers()) > 0:
 				quiet_print('blocking...', args['quiet'])
 				for follower in api.followers():
 					api.create_block(follower.id, follower.screen_name)
 			else:
 				finished += 1
 			
-			if not args['no_delete_tweets'] or len(api.user_timeline()) > 0:
+			if not args['no_delete_tweets'] and len(api.user_timeline()) > 0:
 				quiet_print('deleting tweets...', args['quiet'])
 				for tweet in api.user_timeline():
 					api.destroy_status(tweet.id)
